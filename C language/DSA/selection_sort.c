@@ -12,15 +12,15 @@ void selectionSort(int * A, int n){
     int indexofmin;
     for (int i = 0; i < n-1; i++)
     {
-        indexofmin = i;
         int temp;
         for (int j = i + 1; j < n; j++)
         {
-            if (A[indexofmin] > A[j])
+            
+            if (A[i] > A[j])
             {
                 temp = A[j];
-                A[j] = A[indexofmin];
-                A[indexofmin] = temp;
+                A[j] = A[i];
+                A[i] = temp;
             }
             
         }

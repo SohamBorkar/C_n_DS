@@ -14,7 +14,7 @@ void insertionsort(int* A, int n){
     {
         key = A[i];
         j = i - 1;
-        while (j >= 0 && A[j] > key) // if you want in decending then replace with <key.
+        while (j >= 0 && A[j] > key) // if you want in decending then replace with < key.
         {
             A[j + 1] = A[j];
             j--;
