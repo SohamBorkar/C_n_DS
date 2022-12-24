@@ -44,3 +44,46 @@ int main()//  min         max
     // printArray(A, n);
     return 0;
 }
+
+
+// If code above didn't work, then try to run below code.
+
+// #include <stdio.h>
+
+// void bin_search(int* A, int n, int tf){
+//     int start = 0, end = n - 1, mid = (start + end) / 2;
+//     for (int i = 0; i < n / 2; i++)
+//     {
+//         if (tf == A[mid])
+//         {
+//             printf("Element found at %d", mid);
+//             return;
+//         }
+//         else
+//         {
+//             if (A[mid] > tf)
+//             {
+//                 end = mid;
+//             }
+            
+//             else
+//             {
+//                 start = mid;
+//             }
+            
+//         }
+        
+//         mid = (start + end) / 2;
+//     }
+    
+// }
+
+// int main()
+// {//            0  1  2  3  4  5  6
+//     int A[] = {1, 2, 3, 4, 5, 6, 7};
+//     int n = 7;
+//     int tf = 4;
+
+//     bin_search(A, n, tf);
+//     return 0;
+// }
