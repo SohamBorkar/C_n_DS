@@ -1,36 +1,69 @@
+// String Generator using RE
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-void printArray(int* A, int n){
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", A[i]);
-    }
-    printf(" \n");
-}
-
-void insertionsort(int* A, int n){
-
-    for (int i = 1; i < n; i++)
-    {
-        int key = A[i];
-        int j = i - 1;
-        while (j >= 0 && A[j] > key)    
-        {
-            A[j + 1] = A[j];
-            j--;
-        }
-        A[j + 1] = key;        
-    }
-        
+int random_num(){
+    // Generating ramdon number
+    // srand(time(0));
+    int h = (rand() % (3 - 1 + 1)) + 1;
+    return h;
 }
 
 int main()
 {
-    int A[] = {12, 54, 65, 7, 23, 9};
-    int n = 6;
-    printArray(A, n);
-    insertionsort(A, n);
-    printArray(A, n);
+    char re[10];
+    int r;
+    // Taking input of Regular Experssion from user
+    printf("Enter your Regular Expression: ");
+    scanf("%s",&re);
+
+    // Printing Regular Expression taken from user
+    printf("Entered Regular Expression is: %s \n",re);
+
+    // Calculating length of string and stroing in 'j' variable
+    int j;
+    for(j = 0; re[j] != '\0'; ++j){}
+
+    // printf("Length of string: %d \n",j);
+
+    // 1*01*01*
+
+    printf("Enter number of combinations you want in language: \n");
+    int num_of_comb;
+    scanf("%d",&num_of_comb);
+
+    for (int t = 0; t < num_of_comb; t++)
+    {
+        for (int i = 0; i < j; i++)
+    {
+        if (re[0] == '*')
+        {
+            printf("Enter correct Expression again\n");
+            exit(0);        // want to forward at the start of the program.
+        }
+        
+        else if (re[i] == '*')
+        {
+            // getting random value    
+            r = random_num();
+            // printf("random number is : %d\n",r);
+
+            while(r > 1){           // here is problem that else below is also executing so we have to use 1 insted of 0
+                printf("%c",re[i-1]);
+                r--;
+            }
+        }
+        
+        else
+        {
+            printf("%c",re[i]);
+        }
+    }
+            printf("\n");
+
+    }
 
     return 0;
 }

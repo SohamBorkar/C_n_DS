@@ -6,10 +6,9 @@
 
 int random_num(){
     // Generating ramdon number
-    srand(time(0));
-    int r = (rand() % (5 - 1 + 1)) + 1;
-    // printf("Random number: %d \n", r);  
-    return r;
+    // srand(time(0));
+    int h = (rand() % (3 - 1 + 1)) + 1;
+    return h;
 }
 
 int main()
@@ -31,7 +30,13 @@ int main()
 
     // 1*01*01*
 
-    for (int i = 0; i < j; i++)
+    printf("Enter number of combinations you want in language: \n");
+    int num_of_comb;
+    scanf("%d",&num_of_comb);
+
+    for (int t = 0; t < num_of_comb; t++)
+    {
+        for (int i = 0; i < j; i++)
     {
         if (re[0] == '*')
         {
@@ -56,27 +61,9 @@ int main()
             printf("%c",re[i]);
         }
     }
-            //problem to solve is: random number is not generating each time we call the function.
-    int e = random_num();
-    printf("%d \n", e);
-    e = random_num();
-    printf("%d \n", e);
-    e = random_num();
-    printf("%d \n", e);
-    e = random_num();
-    printf("%d \n", e);
+            printf("\n");
 
-    int f = random_num();
-    printf("%d \n",f);
-    f = random_num();
-    printf("%d \n");
-    f = random_num();
-    printf("%d \n");
-    f = random_num();
-    printf("%d \n");
-    f = random_num();
-    printf("%d \n");
+    }
 
-    
     return 0;
 }
