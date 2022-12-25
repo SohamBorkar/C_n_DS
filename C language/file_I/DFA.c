@@ -34,7 +34,9 @@ int main()
     int num_of_comb;
     scanf("%d",&num_of_comb);
 
-    for (int t = 0; t < num_of_comb; t++)
+    printf("{");
+
+    for (int t = 1; t <= num_of_comb; t++)
     {
         for (int i = 0; i < j; i++)
     {
@@ -61,9 +63,15 @@ int main()
             printf("%c",re[i]);
         }
     }
-            printf("\n");
+            // printf("\n");
+            if (t == num_of_comb)
+                printf("");
+            
+            else
+                printf(", ");
 
     }
+    printf("}");
 
     return 0;
 }
