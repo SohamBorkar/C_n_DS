@@ -28,9 +28,7 @@ int main()
 
     // Calculating length of string and stroing in 'j' variable
     int j;
-    for (j = 0; re[j] != '\0'; ++j)
-    {
-    }
+    for (j = 0; re[j] != '\0'; ++j){}
 
     // printf("Length of string: %d \n",j);
 
@@ -39,6 +37,8 @@ int main()
     printf("Enter number of combinations you want in language: \n");
     int num_of_comb;
     scanf("%d", &num_of_comb);
+
+    printf("{");
 
     // Outer for for number of combinations
     for (int t = 0; t < num_of_comb; t++)
@@ -62,7 +62,9 @@ int main()
                 { // here is problem that else below is also executing so we have to use 1 insted of 0
                     // printf("%c",re[i-1]);
                     // strncpy(ans, &re[i-1],re[i]);
-                    strcpy(ans, &re[i - 1]);
+
+                    // char temp = re[i-1];
+                    // strcpy(ans, temp);
                     r--;
                 }
             }
@@ -71,11 +73,21 @@ int main()
             {
                 // printf("%c",re[i]);
                 // strncat(ans, &re[i],re[i]);
-                strcpy(ans, re[i]);
+
+                // char temp2 = re[i];
+                // strcpy(ans, temp2);
             }
+            
         }
         printf("String generated is: %s \n", ans);
+
+        if (t == num_of_comb)
+                printf("");
+            
+            else
+                printf(", ");
     }
 
+        printf("}");
     return 0;
 }
