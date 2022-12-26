@@ -31,7 +31,7 @@ int main()
     {
     }
 
-    if (re[0] == '*')
+    if (re[0] == '*' || '!' || '?' || '@' || '#' || '&' || '/' || '<' || '>' || '%')
     {
         printf("Enter correct Expression again\n");
         exit(0); // want to forward at the start of the program.
