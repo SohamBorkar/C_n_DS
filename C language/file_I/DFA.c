@@ -16,7 +16,7 @@ int random_num()
 
 int main()
 {
-    char re[10];
+    char re[50];
     int r;
     // Taking input of Regular Experssion from user
     printf("Enter your Regular Expression: ");
@@ -46,11 +46,15 @@ int main()
 
     bool b = false;
     // If all elements in string are same.
-    for (int i = 0; i < j - 1; i++)
+    for (int i = 0; i < j ; i++)    // 3    2 < 3
     {
         if (re[i] == re[i + 1])
             b = false;
+        else
+            b = true;
     }
+
+    printf("Booleanv value is %d \n",b);
 
     if (b == false)
     {
