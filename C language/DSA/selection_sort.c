@@ -9,13 +9,12 @@ void printArray(int* A, int n){
 }
 
 void selectionSort(int * A, int n){
-    int indexofmin;
+    
     for (int i = 0; i < n-1; i++)
     {
-        int temp;
         for (int j = i + 1; j < n; j++)
         {
-            
+            int temp;
             if (A[i] > A[j])
             {
                 temp = A[j];

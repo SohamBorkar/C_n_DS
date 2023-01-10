@@ -14,8 +14,8 @@ int partition(int* arr, int low, int high){
         }
         
     }
-    partition(arr, low, pivot - 1);
-    partition(arr, pivot + 1, high);
+    // partition(arr, low, pivot - 1);
+    // partition(arr, pivot + 1, high);
 };
 
 void printarr(int* arr, int high){
@@ -28,9 +28,9 @@ void printarr(int* arr, int high){
 
 int main()
 {
-    int arr[8] = {10, 80, 30, 90, 40, 50, 70};
+    int arr[7] = {10, 80, 30, 90, 40, 50, 70};
     //             0   1   2   3   4   5   6 
-    int low = 0, high = sizeof(arr) / sizeof(int) - 1;
+    int low = 0, high = sizeof(arr) / sizeof(int);
 
     printarr(arr, high);
     partition(arr, low, high);

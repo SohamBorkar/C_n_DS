@@ -36,6 +36,7 @@ int main(int argc, char** argv) {
     printf("Error: No regular expression provided\n");
     return 1;
   }
+  // argv[1] = "a*ba*b";
 
   // Create the transition table for the regular expression
   struct TransitionTable table;

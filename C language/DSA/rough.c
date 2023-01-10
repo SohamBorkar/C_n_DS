@@ -1,25 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 int main()
 {
-    int* ptr = malloc(10 * sizeof(int));
+    int arr[7] = {1,2,3,4,5,6,7};
+    int min = 0, max = 6, key = 6, temp = 7 / 2, mid;
 
-    char re[20] = "This";
-    printf("size of str is: %d \n", sizeof(re));
-
-    // Calculating length of string and stroing in 'j' variable
-    int j;
-    for (j = 0; re[j] != '\0'; ++j)
-    {}    
-
-    printf("actual size is %d \n",j);
-
-    char new[j];
-    strcpy(new, re);
-    printf("new string is: %s \n", new);
-    printf("size of new is : %d \n", sizeof(new));
-    printf("%s \n", new[3]);
+    for (int i = 0; i < i/2; i++)
+    {
+        mid = (min + max)/ 2;
+        if(mid == key){
+            printf("Found at %d\n", mid);
+            break;
+        }
+        else if (key < mid)
+            max = mid;
+        else if (key > mid)
+            min = mid;
+    } 
+        
     return 0;
 }
