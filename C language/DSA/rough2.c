@@ -70,13 +70,9 @@ void pop(int *arr, int top)
 
 void display(int *arr, int top)
 {
-    // for (int i = top; i >= 0; i--)
-    //     printf("%d, ", arr[i]);
-
     for (int i = top; i >= 0; i--)
-    {
-        printf("%d\n", arr[i]);
-    }
+        printf("%d, ", arr[i]);
+
     if (top == -1)
     {
         printf("Stack is empty \n");
