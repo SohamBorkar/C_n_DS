@@ -4,9 +4,10 @@ void push(int *arr, int size, int top, int toadd)
 {
     if (top == size - 1)
         printf("Stack overflow...\n");
-    else
+    else{
         top++;
-    arr[top] = toadd;
+        arr[top] = toadd;
+    }
 };
 
 void pop(int *arr, int toadd, int top)
@@ -21,9 +22,9 @@ void display(int *arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        if (arr[i] == "\0")
+        if (arr[0] == '\0')
         {
-            printf("empty");
+            printf("array is empty");
         }
         else
             printf("%d ", arr[i]);
@@ -37,12 +38,13 @@ int main()
     scanf("%d", &size);
 
     int arr[size];
-    int top = 0;
+    int top = -1;
     int choice;
     int toadd;
 
     while (1)
     {
+        printf("\n");
         printf("Press 1 to Push an element to Stack \n");
         printf("Press 2 to Pop an element from Stack \n");
         printf("Press 3 to display Stack \n");
