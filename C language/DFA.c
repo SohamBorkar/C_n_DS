@@ -138,19 +138,19 @@ int main()
     }
     if (j == 15)
     {
-        printf("number of states are : %d", state - 3);
+        printf(" Probable number of states are : %d", state - 3);
     }
     else if (j > 8)
     {
-        printf("number of states are : %d", state - 2);
+        printf("Probable number of states are : %d", state - 2);
     }
     else if (j > 5)
     {
-        printf("number of states are : %d", state - 1);
+        printf("Probable number of states are : %d", state - 1);
     }
     else
     {
-        printf("number of states are : %d", state);
+        printf("Probable number of states are : %d", state);
     }
 
     return 0;

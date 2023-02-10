@@ -73,15 +73,24 @@ void no_star_re(char re[], int j)
     }
 };
 
-void print_language(char re[], int j)
+void swap(char *a, char *b)
 {
+    char temp[30];
+    strcpy(temp, a);
+    strcpy(a, b);
+    strcpy(b, temp);
+};
+
+void print_language(char re[], int j) // number of elements
+{
+    // j = len of re
     printf("Enter number of combinations you want in language: \n");
     int num_of_comb;
     scanf("%d", &num_of_comb);
 
-    printf("{");
+    char lang[20]; // each element created get stored in lang string array
 
-    for (int t = 1; t <= num_of_comb; t++) //  a*b*aa
+    for (int t = 1; t <= num_of_comb; t++) //  run times of combination
     {
         for (int i = 0; i < j; i++)
         {
@@ -90,27 +99,56 @@ void print_language(char re[], int j)
                 int r = 0;
                 // getting random value
                 r = random_num(); // 4
-                // printf("random number is : %d\n",r);
+                                  // printf("random number is : %d\n",r);
 
+                int s = 0;
                 while (r > 1)
-                {                            // here is problem that else below is also executing so we have to use 1 insted of 0
-                    printf("%c", re[i - 1]); // aaaa
+                {
+
+                    char c = re[i - 1];
+                    str_append(lang[s], c);
+                    // printf("%c", re[i - 1]);
                     r--;
+                    s++;
                 }
+                printf("%s\n", lang[i]);
             }
 
             else
             {
-                printf("%c", re[i]);
+                char c = re[i];
+                str_append(lang[i], c);
+                // printf("%c", re[i]);
+                // printf("%s \n", lang[i]);
             }
         }
-        if (t == num_of_comb)
-            printf("");
 
-        else
-            printf(", ");
+        char str[num_of_comb][20];
+
+        for (int l = 0; l < num_of_comb; l++)
+        {
+            for (int m = 0; m < num_of_comb - l - 1; m++)
+            {
+                if (strlen(lang[m]) > strlen(str[m + 1]))
+                {
+                    swap(lang[m], str[m + 1]);
+                }
+            }
+        }
     }
-    printf("}\n\n");
+
+    // printing of languages done
+    printf("{\n");
+        for (int t = 0; t < num_of_comb; t++)
+        {
+            printf("%s", lang[t]);
+            if (t == num_of_comb)
+                printf("");
+
+            else
+                printf(", ");
+        }
+        printf("} \n\n");
 };
 
 void print_states(char re[], int j)
