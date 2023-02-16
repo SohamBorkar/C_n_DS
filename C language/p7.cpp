@@ -38,7 +38,7 @@ bool isbalanced(string s){
 
 int main(){
     // string s = "(){{{}}[]}";
-    string s = "{([]}";
+    string s = "{([])}";
     if(isbalanced(s)){
         cout << "Balanced Parenthesis" << endl;
     }

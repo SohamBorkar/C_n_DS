@@ -78,7 +78,7 @@ void Dijkstra(int Graph[MAX][MAX], int cost[MAX][MAX], int n, int start)
 
 int main()
 {
-    int Graph[MAX][MAX], i, j, n = 7, u, cost[MAX][MAX];
+    int Graph[MAX][MAX], n, u, cost[MAX][MAX];
     printf("Enter the number of vertices: ");
     scanf("%d", &n);
 
@@ -92,7 +92,7 @@ int main()
 0 3 0 0 2 0 1
 0 0 0 1 0 1 0
 */
-    u = 0;
+
     Dijkstra(Graph, cost, n, u);
 
     return 0;

@@ -202,6 +202,7 @@ int main()
 
     chk_re(re);
     no_star_re(re, j);
+    
     is_all_same_element(re, j);
 
     print_language(re, j);
