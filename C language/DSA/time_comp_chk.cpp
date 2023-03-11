@@ -1,3 +1,6 @@
+// https://i.stack.imgur.com/osGBT.jpg
+// above is link for time complexity graph.
+
 #include <iostream>
 #include <vector>
 #include <ctime>
