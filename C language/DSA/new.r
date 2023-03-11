@@ -161,15 +161,14 @@ ifelse(test_expression, x, y)
 # The output vector has the element x if the output of the test_expression is TRUE. If the output is FALSE,
 # then the element in the output vector will be y.
 
+
+
 # input vector
 x <- c(12, 9, 23, 14, 20, 1, 5)
 
 # ifelse() function to determine odd/even numbers
 ifelse(x %% 2 == 0, "EVEN", "ODD")
 # output: "EVEN" "ODD"  "ODD"  "EVEN" "EVEN" "ODD"  "ODD" 
-
-
-
 
 
 
@@ -203,17 +202,13 @@ for(i in x) {
 
 
 
-
-
-# repeat statement : it repeated uptil break statement in not occured:
+# repeat statement : it repeated uptil break statement in not occured: //infinite/ while(0) loop
 repeat {
       # statements
       if(stop_condition) {
           break
       }
   }
-
-
 
 
 
@@ -244,10 +239,6 @@ print(add(add(1, 2), add(3, 4)))        # 10
 
 
 
-
-
-
-
 # Strings and its oprations:
 # 1. To find length of string
 message1 <- "Programiz"
@@ -258,7 +249,12 @@ message2 <- "dlkj"
 paste(message1, message2)
 
 # compare 2 strings:
-print(message1 == message2)
+print(message1 == message2)     #T or F
+
+
+
+
+
 
 # changing cases:
 message <- "R Programming"
@@ -268,10 +264,6 @@ cat("Uppercase:", message_upper)
 # change string to lowercase
 message_lower <- tolower(message)
 cat("\nLowercase:", message_lower)
-
-
-
-
 
 
 
@@ -287,24 +279,13 @@ numbers <- c(1, 2, 3, 4, 5)
 # or
 numbers <- 1:5
 
-
-
-
-
 # repeat sequence of vector 2 times
 numbers <- rep(c(2,4,6), times = 2)
-
 cat("Using times argument:", numbers)     # Using times argument: 2 4 6 2 4 6
-
-
 
 # repeat each element of vector 2 times
 numbers <- rep(c(2,4,6), each = 2)
 cat("\nUsing each argument:", numbers)    # Using each argument: 2 2 4 4 6 6
-
-
-
-
 
 # length of vector:
 languages <- c("R", "Swift", "Python", "Java")
@@ -314,7 +295,7 @@ cat("Total Elements:", length(languages))
 
 
 
-
+      
 # create a 2 by 3 matrix
 matrix1 <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3, byrow = TRUE)
 # if you denote byrow = T, then it will fill matrix row wise, which is optional
@@ -328,8 +309,6 @@ print(matrix2)      # prints matrix column wise
 #     [,1] [,2] [,3]
 # [1,]    1    2    3
 # [2,]    4    5    6
-
-
 
 
 
@@ -382,8 +361,6 @@ for (item in list2){        # iterate through each elements of numbers
 
 
 
-
-
 # Arrays in R
 array1 <- array(c(1:12), dim = c(2,3,2))        # we created array of 2 by 3 having values from 1 to 12 in 2 parts
 print(array1)
@@ -407,3 +384,96 @@ cat(array[c(1), ,2])  # access entire elements at 1st row of 2nd matrix
 
 
 
+
+
+
+# Data frame in R:
+# is a two-dimensional data structure which can store data in tabular format.
+# Data frames have rows and columns and each column can be a different vector and
+# different vectors can be of different data types.
+
+# Create a data frame
+dataframe1 <- data.frame (
+  Name = c("Juan", "Alcaraz", "Simantha"),
+  Age = c(22, 15, 19),
+  Vote = c(TRUE, FALSE, TRUE)
+)
+
+print(dataframe1)
+
+#       Name   Age       Vote
+# 1     Juan    22       TRUE
+# 2  Alcaraz    15      FALSE
+# 3 Simantha    19       TRUE
+
+print(dataframe1[1])    # pass index number inside [ ] 
+print(dataframe1[["Name"]]) # pass column name inside [[  ]] 
+print(dataframe1$Name)  # use $ operator and column name 
+
+#      Name
+# 1     Juan
+# 2  Alcaraz
+# 3 Simantha
+
+# [1] "Juan"     "Alcaraz"  "Simantha"
+# [1] "Juan"     "Alcaraz"  "Simantha"
+
+
+
+
+# Combining 2 data frames vertically using rbind()
+dataframe1 <- data.frame (      # create a data frame
+  Name = c("Juan", "Alcaraz"),
+  Age = c(22, 15)
+)
+
+dataframe2 <- data.frame (      # create another data frame
+  Name = c("Yiruma", "Bach"),
+  Age = c(46, 89)
+)
+
+updated <- rbind(dataframe1, dataframe2)        # combine two data frames vertically 
+print(updated)
+
+#        Name   Age
+# 1       Juan    22
+# 2    Alcaraz    15
+# 3     Yiruma    46
+# 4       Bach    89
+
+# Combining 2 data frames horizontally using cbind()
+dataframe1 <- data.frame (      # create a data frame
+  Name = c("Juan", "Alcaraz"),
+  Age = c(22, 15)
+)
+
+dataframe2 <- data.frame (      # create another data frame
+  Hobby = c("Tennis", "Piano")
+)
+
+updated <- cbind(dataframe1, dataframe2)        # combine two data frames horizontally 
+print(updated)
+
+#       Name   Age   Hobby
+# 1     Juan    22  Tennis
+# 2 Alcaraz     15   Piano
+
+
+
+
+
+
+# factors in R:
+# A Factor is a data structure that is used to work with categorizable datas
+
+students_gender <- factor(c("male", "female", "male", "transgender", "female")) # create a factor
+print(students_gender)
+
+# [1] male   female   male   transgender    female     
+# Levels: female male transgender
+
+students_gender[1] <- "other"       # Modifying element in factor
+
+for (status in marital_status) {        # loop over factor
+    print(status)
+}
