@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "type_traits": "c"
+        "*.embeddedhtml": "html",
+        "type_traits": "c",
+        "ratio": "cpp"
     }
 }

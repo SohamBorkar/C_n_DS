@@ -47,6 +47,7 @@ void dijkstra(int cost[MAX][MAX], int n)
                 {
                     distance[i] = mindistance + cost[nextnode][i];
                     predefined[i] = nextnode;
+                    
                 }
         count++;
     }

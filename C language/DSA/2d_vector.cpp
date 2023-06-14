@@ -16,5 +16,16 @@ int main(){
         cout << endl;
     }
     
-    return 0;
+
+    vector <vector<int>> arr1 = {{1,2,3}, {4,5,6}, {7,8,9,10}};
+    for (int i = 0; i < arr1.size(); i++)
+    {
+        for(int number: arr1[i]){
+            cout<< number << " ";
+        }   
+        cout<<"  " << endl;
+        
+    }
+    
+    return 0;       
 }
